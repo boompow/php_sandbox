@@ -53,4 +53,14 @@ include("./inc/header.php");
 
 		?>
 	</table>
+
+	<form action="index.php" method="post" class="absolute top-0 right-0 ">
+		<input type="submit" value="logout" name="logout" class="bg-red-500 rounded-md px-2 py-1.5 m-4 text-white cursor-pointer" >
+	</form>
 </body>
+<?php
+	if(isset($_POST["logout"])){
+		session_destroy();
+		header("Location: session.php");
+	}
+?>
